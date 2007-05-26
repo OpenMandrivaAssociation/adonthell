@@ -40,9 +40,11 @@ Waste's Edge.
 %patch5 -p1 -b .py2.5
 
 %build
-./autogen.sh
+#./autogen.sh
 %configure2_5x	--bindir=%{_gamesbindir} \
-		--datadir=%{_gamesdatadir}
+		--datadir=%{_gamesdatadir} \
+		--with-py-libs=-lpython%{python_version} \
+		--with-py-cflags=-I/usr/include/python%{python_version}
 #(perovyind) -O2 causes problems during linking for some reason..
 %make CXXFLAGS="%{optflags} -O2 -fno-exceptions -DDATA_DIR=\"\\\"/usr/share/games/adonthell\"\\\"" LDFLAGS="-lSDL_ttf"
 
