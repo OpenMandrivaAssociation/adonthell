@@ -1,7 +1,7 @@
 %define	name	adonthell
 %define	version	0.3.4
 %define	cvs	cvs.20050813
-%define	rel	2
+%define	rel	3
 %define release	%mkrel %{rel}
 
 Summary:	A 2D graphical RPG game
@@ -20,6 +20,7 @@ Patch5:		04_python2.5.diff
 URL:		http://adonthell.linuxgames.com/
 BuildRequires:	oggvorbis-devel SDL-devel python-devel zlib-devel swig
 BuildRequires:	SDL_mixer-devel SDL_ttf-devel
+BuildRequires:	gpm-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
