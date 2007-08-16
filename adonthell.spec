@@ -8,7 +8,7 @@ Summary:	A 2D graphical RPG game
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-License:	GPL
+License:	GPLv2+
 Group:		Games/Adventure
 Source0:	adonthell_%{version}.%{cvs}.orig.tar.gz
 #Patch0:		adonthell-0.3.4-gcc4-fix.patch
