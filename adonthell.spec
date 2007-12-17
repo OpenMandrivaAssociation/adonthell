@@ -21,7 +21,6 @@ URL:		http://adonthell.linuxgames.com/
 BuildRequires:	oggvorbis-devel SDL-devel python-devel zlib-devel swig
 BuildRequires:	SDL_mixer-devel SDL_ttf-devel
 BuildRequires:	gpm-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 A 2D, graphical, single player role playing game inspired by good old 
