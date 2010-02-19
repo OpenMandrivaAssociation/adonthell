@@ -11,6 +11,8 @@ License:	GPLv2+
 Group:		Games/Adventure
 Source0:	adonthell-src-%{version}.tar.gz
 Patch0:		adonthell-src-0.3.5-fix-str-fmt.patch
+Patch1:		adonthell-0.3.5-glibc-2.10.patch
+Patch2:		adonthell-0.3.5-configure.in.patch
 URL:		http://adonthell.linuxgames.com/
 BuildRequires:	oggvorbis-devel SDL-devel python-devel zlib-devel swig
 BuildRequires:	SDL_mixer-devel SDL_ttf-devel
@@ -28,14 +30,15 @@ Waste's Edge.
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p1
+%patch2 -p0
 
 %build
+autoreconf -fi
+export CXXFLAGS="%{optflags} -O2 -fno-exceptions"
 %configure2_5x	--bindir=%{_gamesbindir} \
-		--datadir=%{_gamesdatadir} \
-		--with-py-libs=-lpython%{python_version} \
-		--with-py-cflags=-I/usr/include/python%{python_version}
-#(perovyind) -O2 causes problems during linking for some reason..
-%make CXXFLAGS="%{optflags} -O2 -fno-exceptions -DDATA_DIR=\"\\\"/usr/share/games/adonthell\"\\\"" LDFLAGS="-lSDL_ttf"
+		--datadir=%{_gamesdatadir}
+%make
 
 %install
 rm -rf %{buildroot}
@@ -55,4 +58,3 @@ rm -rf %{buildroot}
 %{_gamesbindir}/%{name}-0.3
 %dir %{_gamesdatadir}/%{name}
 %{_gamesdatadir}/%{name}/*
-
