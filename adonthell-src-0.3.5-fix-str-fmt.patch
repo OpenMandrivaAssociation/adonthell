@@ -1,0 +1,11 @@
+--- src/py_adonthell_wrap.cc~	2008-05-29 20:43:43.000000000 +0200
++++ src/py_adonthell_wrap.cc	2009-01-22 10:07:15.000000000 +0100
+@@ -867,7 +867,7 @@
+     Py_DECREF(old_str);
+     Py_DECREF(value);
+   } else {
+-    PyErr_Format(PyExc_RuntimeError, mesg);
++    PyErr_Format(PyExc_RuntimeError, "%s",mesg);
+   }
+ }
+ 
