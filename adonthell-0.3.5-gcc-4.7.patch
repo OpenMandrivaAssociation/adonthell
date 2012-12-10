@@ -1,0 +1,26 @@
+Index: adonthell-0.3/src/win_event.cc
+===================================================================
+RCS file: /sources/adonthell/adonthell-0.3/src/win_event.cc,v
+retrieving revision 1.5
+retrieving revision 1.6
+diff -u -r1.5 -r1.6
+--- adonthell-0.3/src/win_event.cc	
++++ adonthell-0.3/src/win_event.cc	
+@@ -1,5 +1,5 @@
+ /*
+-   $Id: win_event.cc,v 1.5 2002/12/16 19:09:54 ksterker Exp $
++   $Id: win_event.cc,v 1.7 2011/02/11 20:50:27 ksterker Exp $
+ 
+    (C) Copyright 2001 Joel Vennin
+    Part of the Adonthell Project http://adonthell.linuxgames.com
+@@ -34,8 +34,9 @@
+ 	
+ 	    case DESTROY:
+ 	    {
++		Functor0wRet<bool> func0ret;
+ 	        set_callback_destroy (
+-	        makeFunctor (&Functor0wRet<bool>(), *callback, &py_callback::callback_func0ret));
++	        makeFunctor (&func0ret, *callback, &py_callback::callback_func0ret));
+ 	        break;
+ 	    }
+ 	
