@@ -16,7 +16,7 @@ Patch0:		adonthell-src-0.3.5-fix-str-fmt.patch
 Patch1:		adonthell-0.3.5-glibc-2.10.patch
 Patch2:		adonthell-0.3.5-configure.in.patch
 Patch3:		adonthell-0.3.5-gcc-4.7.patch
-URL:		http://adonthell.linuxgames.com/
+URL:		https://adonthell.linuxgames.com/
 BuildRequires:	pkgconfig(vorbis) 
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(python2) 
