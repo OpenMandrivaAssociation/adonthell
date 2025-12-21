@@ -17,6 +17,11 @@ Patch1:		adonthell-0.3.5-glibc-2.10.patch
 Patch2:		adonthell-0.3.5-configure.in.patch
 Patch3:		adonthell-0.3.5-gcc-4.7.patch
 URL:		https://adonthell.linuxgames.com/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(vorbis) 
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(python2) 
